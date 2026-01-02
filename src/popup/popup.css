@@ -1,0 +1,258 @@
+/* Bilibili Content Filter Popup Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 320px;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #ffffff;
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+/* Header Styles */
+.popup-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    background: linear-gradient(135deg, #00a1d6 0%, #0084c7 100%);
+    color: white;
+}
+
+.popup-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.9;
+    color: white;
+}
+
+/* Filter Controls */
+.filter-controls {
+    flex: 1;
+    padding: 8px 0;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.filter-item:hover {
+    background-color: #f8f9fa;
+}
+
+.filter-item:last-child {
+    border-bottom: none;
+}
+
+.filter-info {
+    flex: 1;
+    margin-right: 16px;
+}
+
+.filter-label {
+    display: block;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-description {
+    display: block;
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.3;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.toggle-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    display: block;
+    width: 44px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-input:checked + .toggle-label {
+    background-color: #00a1d6;
+}
+
+.toggle-input:checked + .toggle-label .toggle-slider {
+    transform: translateX(20px);
+}
+
+.toggle-input:focus + .toggle-label {
+    outline: 2px solid #00a1d6;
+    outline-offset: 2px;
+}
+
+.toggle-label:hover {
+    opacity: 0.8;
+}
+
+/* Disabled state */
+.toggle-input:disabled + .toggle-label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toggle-input:disabled + .toggle-label:hover {
+    opacity: 0.5;
+}
+
+/* Footer Styles */
+.popup-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f8f9fa;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #28a745;
+    transition: background-color 0.3s ease;
+}
+
+.status-dot.loading {
+    background-color: #ffc107;
+    animation: pulse 1.5s infinite;
+}
+
+.status-dot.error {
+    background-color: #dc3545;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-text {
+    font-weight: 500;
+}
+
+/* Loading state */
+.popup-container.loading .filter-item {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Error state */
+.error-message {
+    padding: 12px 20px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin: 8px 20px;
+    font-size: 12px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .toggle-slider,
+    .toggle-label,
+    .filter-item,
+    .status-dot {
+        transition: none;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .popup-header {
+        background: #000000;
+        border-bottom: 2px solid #ffffff;
+    }
+    
+    .filter-item {
+        border-bottom: 1px solid #333333;
+    }
+    
+    .toggle-label {
+        border: 2px solid #333333;
+    }
+    
+    .toggle-input:checked + .toggle-label {
+        background-color: #000000;
+        border-color: #000000;
+    }
+}

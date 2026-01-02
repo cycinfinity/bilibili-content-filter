@@ -1,0 +1,93 @@
+/**
+ * Bilibili Content Filter - Content Styles
+ * 
+ * CSS styles for content filtering functionality
+ */
+
+/* Base filter classes - these are applied by the filter manager */
+.bilibili-filter-hidden {
+  display: none !important;
+}
+
+.bilibili-filter-fade {
+  opacity: 0.1 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* Layout preservation - hides content while maintaining space */
+.bilibili-filter-preserve-layout {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Smooth transitions for filter application */
+.bilibili-filter-transition {
+  transition: all 0.3s ease !important;
+}
+
+/* Specific filter styles for better integration */
+
+/* Home recommendations filter */
+.bilibili-filter-recommendations-hidden {
+  display: none !important;
+}
+
+/* Ranking and trending filter */
+.bilibili-filter-ranking-hidden {
+  display: none !important;
+}
+
+/* Right sidebar filter */
+.bilibili-filter-sidebar-hidden {
+  display: none !important;
+}
+
+/* When sidebar is hidden, expand main content */
+.bilibili-filter-sidebar-hidden ~ .main-container,
+.bilibili-filter-sidebar-hidden + .main-container {
+  margin-right: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Comments filter */
+.bilibili-filter-comments-hidden {
+  display: none !important;
+}
+
+/* Related videos filter */
+.bilibili-filter-related-hidden {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .bilibili-filter-preserve-layout {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .bilibili-filter-fade {
+    opacity: 0.05 !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bilibili-filter-fade {
+    opacity: 0 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .bilibili-filter-transition {
+    transition: none !important;
+  }
+}

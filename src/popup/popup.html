@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili Content Filter</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <h1>Bilibili Content Filter</h1>
+            <p class="subtitle">Control what content you see</p>
+        </header>
+        
+        <div class="filter-controls">
+            <div class="error-message" role="alert" aria-live="polite"></div>
+            
+            <div class="filter-item">
+                <div class="filter-info">
+                    <label for="homeRecommendations" class="filter-label">Homepage Recommendations</label>
+                    <span class="filter-description">Hide suggested videos on homepage</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="homeRecommendations" class="toggle-input" data-filter="homeRecommendations">
+                    <label for="homeRecommendations" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-item">
+                <div class="filter-info">
+                    <label for="rankingTrending" class="filter-label">Ranking & Trending</label>
+                    <span class="filter-description">Hide popular and trending content</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="rankingTrending" class="toggle-input" data-filter="rankingTrending">
+                    <label for="rankingTrending" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-item">
+                <div class="filter-info">
+                    <label for="rightSidebar" class="filter-label">Right Sidebar</label>
+                    <span class="filter-description">Hide sidebar content and recommendations</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="rightSidebar" class="toggle-input" data-filter="rightSidebar">
+                    <label for="rightSidebar" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-item">
+                <div class="filter-info">
+                    <label for="comments" class="filter-label">Comments</label>
+                    <span class="filter-description">Hide comment sections</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="comments" class="toggle-input" data-filter="comments">
+                    <label for="comments" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-item">
+                <div class="filter-info">
+                    <label for="relatedVideos" class="filter-label">Related Videos</label>
+                    <span class="filter-description">Hide related video suggestions</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="relatedVideos" class="toggle-input" data-filter="relatedVideos">
+                    <label for="relatedVideos" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <footer class="popup-footer">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Ready</span>
+            </div>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

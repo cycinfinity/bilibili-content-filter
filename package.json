@@ -1,0 +1,55 @@
+{
+  "name": "bilibili-content-filter",
+  "version": "1.0.0",
+  "description": "Browser extension to filter distracting content on Bilibili.com",
+  "main": "build.config.js",
+  "scripts": {
+    "build": "node build.config.js all",
+    "build:chrome": "node build.config.js chrome",
+    "build:edge": "node build.config.js edge",
+    "build:safari": "node build.config.js safari",
+    "clean": "rm -rf dist/ packages/",
+    "deploy": "./scripts/deploy-all.sh",
+    "deploy:chrome": "./scripts/deploy-chrome.sh",
+    "deploy:edge": "./scripts/deploy-edge.sh",
+    "deploy:safari": "./scripts/deploy-safari.sh",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+  },
+  "keywords": [
+    "browser-extension",
+    "bilibili",
+    "content-filter",
+    "focus",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.0.0",
+    "fast-check": "^3.0.0",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup.js"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/manifest*.json"
+    ]
+  }
+}
