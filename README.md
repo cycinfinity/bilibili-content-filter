@@ -91,6 +91,7 @@ Download from your browser's extension store:
 - [Chrome Web Store](https://chrome.google.com/webstore) (search for "Bilibili Content Filter")
 - [Edge Add-ons](https://microsoftedge.microsoft.com/addons) (search for "Bilibili Content Filter")
 - [Safari App Store](https://apps.apple.com) (search for "Bilibili Content Filter")
+/ -ALL the extensions are not uploaded yet. But you can downlowd the /dist file and use developer mode to have a look.
 
 ### For Developers
 1. Clone the repository: `git clone <repository-url>`
