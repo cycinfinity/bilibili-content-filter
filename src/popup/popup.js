@@ -201,8 +201,7 @@ class PopupController {
    */
   getDefaultSettings() {
     return {
-      homeRecommendations: true,
-      rankingTrending: false,
+      hideHeadChannel: false,
       rightSidebar: false,
       comments: false,
       relatedVideos: false,
@@ -521,7 +520,7 @@ class PopupController {
    */
   async testRoundTripConsistency() {
     const results = {};
-    const filterTypes = ['homeRecommendations', 'rankingTrending', 'rightSidebar', 'comments', 'relatedVideos'];
+    const filterTypes = ['hideHeadChannel', 'rightSidebar', 'comments', 'relatedVideos'];
     
     console.log('Starting round-trip consistency test...');
     

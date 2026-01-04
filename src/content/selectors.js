@@ -68,6 +68,8 @@ export const PRIMARY_SELECTORS = {
   ],
   
   comments: [
+    // Main comment app container (most reliable selector)
+    '#commentapp',
     // Comment sections
     '.bb-comment',
     '.comment-container',
@@ -85,7 +87,10 @@ export const PRIMARY_SELECTORS = {
     '.mobile-comment-container',
     // Comment loading and pagination
     '.comment-loading',
-    '.comment-pagination'
+    '.comment-pagination',
+    // Additional comment selectors
+    '.reply-list',
+    '.comment-bilibili-fold'
   ],
   
   relatedVideos: [
